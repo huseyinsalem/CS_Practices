@@ -13,17 +13,17 @@ namespace CS_Practices
 
 
             #region kdv oranı 
-            //Console.Write("Ürünün fiyatı: ");
-            //double Price = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Ürünün fiyatı: ");
+            double Price = Convert.ToDouble(Console.ReadLine());
 
-            //double KdvRate = 0.20;
+            double KdvRate = 0.20;
 
-            //double KdvPrice = Price * KdvRate;
+            double KdvPrice = Price * KdvRate;
 
-            //double TotalPrice = Price + KdvPrice;
+            double TotalPrice = Price + KdvPrice;
 
-            //Console.WriteLine("Kdv oranı: " + KdvPrice);
-            //Console.WriteLine("Kdv'li fiyat: " + TotalPrice);
+            Console.WriteLine("Kdv oranı: " + KdvPrice);
+            Console.WriteLine("Kdv'li fiyat: " + TotalPrice);
             #endregion
 
 
@@ -38,8 +38,11 @@ namespace CS_Practices
             double PayPrice = StartPrice + (Km * PerKmPrice);
 
             PayPrice = PayPrice < MinPrice ? MinPrice : PayPrice;
+             
 
             Console.WriteLine("Taksi ücreti: " + PayPrice);
+
+
 
             #endregion
 
