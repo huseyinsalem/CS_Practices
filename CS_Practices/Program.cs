@@ -38,7 +38,7 @@ namespace CS_Practices
             double PayPrice = StartPrice + (Km * PerKmPrice);
 
             PayPrice = PayPrice < MinPrice ? MinPrice : PayPrice;
-             
+
 
             Console.WriteLine("Taksi ücreti: " + PayPrice);
 
@@ -46,8 +46,57 @@ namespace CS_Practices
 
             #endregion
 
-          
 
+            #region Ucak bilet fiyatı
+
+
+            Console.Write("Mil giriniz: ");
+            int Mil = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Yaşınız: ");
+            int Age = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Yolculuk tipi: ");
+            int TravelType = Convert.ToInt32(Console.ReadLine());
+
+
+
+            if (Mil <= 0 || Age <= 0 || (TravelType != 1 && TravelType!= 2))
+            {
+                Console.WriteLine("hatalı giriş Yaptınız");
+            }
+            else
+            {
+
+                double Price1 = Mil * 0.10;
+                double AgeDisCountRate = 0;
+
+                if ( Age < 12)
+                {
+                    AgeDisCountRate = 0.50;
+                }
+                else if( Age >= 12 && Age <= 24)
+                {
+                    AgeDisCountRate = 0.10;
+                }
+                else if (Age < 65)
+                {
+                    AgeDisCountRate = 0.30;
+                }
+
+                Price -=  (Price * AgeDisCountRate);
+
+                if ( TravelType == 2 )
+                {
+                    Price1 -= (Price1 * 0.20);
+                    Price1 *= 2;
+
+                }
+
+                Console.WriteLine("Bilet tutarı: " + Price1 );
+            }
+
+            #endregion
 
 
 
