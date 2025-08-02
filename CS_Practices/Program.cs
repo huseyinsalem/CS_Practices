@@ -114,24 +114,24 @@ namespace CS_Practices
 
             string events = "";
 
-            if (temperature <5)
+            if (temperature < 5)
             {
                 events = "Skiing";
             }
-            else if ( temperature >=5  && temperature  <15)
+            else if (temperature >= 5 && temperature < 15)
             {
                 events = "Cinema";
             }
-            else if(temperature >=15 && temperature <25)
+            else if (temperature >= 15 && temperature < 25)
             {
                 events = "Picnic";
             }
-            else  
+            else
             {
                 events = "Swimming";
             }
 
-            Console.WriteLine("Suggested activity: " +events );
+            Console.WriteLine("Suggested activity: " + events);
 
 
             #endregion
@@ -139,10 +139,42 @@ namespace CS_Practices
 
 
 
+            #region cift sayılar
 
 
+            Console.Write("Enter a number: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            int counterLoop = 0;
+
+            for (int i =2; i <= n; i +=2)
+            {
+                counterLoop++;
+                Console.WriteLine(i);
+            }
+
+            Console.WriteLine("Loop count: " + counterLoop);
+
+            Console.WriteLine("--------");
+            #endregion
 
 
+            #region tek sayılar
+
+            Console.Write("Enter a number: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+
+            int counterLoop1 = 0;
+
+            for (int i =0; i <= x; i +=3)
+            {
+                counterLoop1++;
+                Console.WriteLine(i);
+            }
+            Console.WriteLine("Loop count: " + counterLoop1);
+
+
+            #endregion
 
 
 
