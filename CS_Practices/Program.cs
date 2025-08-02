@@ -147,7 +147,7 @@ namespace CS_Practices
 
             int counterLoop = 0;
 
-            for (int i =2; i <= n; i +=2)
+            for (int i = 2; i <= n; i += 2)
             {
                 counterLoop++;
                 Console.WriteLine(i);
@@ -166,19 +166,107 @@ namespace CS_Practices
 
             int counterLoop1 = 0;
 
-            for (int i =0; i <= x; i +=3)
+            for (int i = 0; i <= x; i += 3)
             {
                 counterLoop1++;
                 Console.WriteLine(i);
             }
             Console.WriteLine("Loop count: " + counterLoop1);
 
-
+            Console.WriteLine("=================");
             #endregion
 
 
+                 //ATM PROJECT
+
+            #region atm projesi
 
 
+
+            string username, password;
+            int rigt = 3;
+            int balance = 100;
+
+            while (rigt>0)
+            {
+                Console.Write("Your username: ");
+                username= Console.ReadLine();
+                Console.Write("Your password: ");
+                password= Console.ReadLine();
+
+                if(username == "test" && password == "123")
+                {
+                    Console.WriteLine("Hello, welcome to our bank");
+                    int select;
+                    do
+                    {
+                        Console.WriteLine("1-Deposit money");
+                        Console.WriteLine("2-Make a withdrawal ");
+                        Console.WriteLine("3-Perform a balance inquiry");
+                        Console.WriteLine("4-Please log out");
+                        Console.Write("Please select the operation you want to perform (1-4): ");
+                        select = Convert.ToInt32(Console.ReadLine());
+
+
+                        if (select == 1)
+                        {
+                            Console.Write("Amount of money: ");
+                            int price=Convert.ToInt32(Console.ReadLine());
+                            balance += price;
+                            Console.WriteLine($"{price} TL Money has been deposited");
+                        }
+                        else if (select == 2)
+                        {
+                            Console.Write("Amount of money: ");
+                            int price=Convert.ToInt32(Console.ReadLine());
+
+                            if(price>balance)
+                            {
+                                Console.WriteLine("here is insufficient balance in your account !");
+                            }
+                            else
+                            {
+                                balance -= price;
+                                Console.WriteLine($"{price} TL Money has been withdrawn");
+                            }
+                           
+
+                        }
+                        else if (select == 3)
+                        {
+                            Console.WriteLine("Your balance: " + balance + "TL");
+                        }
+
+                    } while(select !=4);
+                    Console.WriteLine("You have logged out !");
+                    break;
+                }
+                else
+                {
+                    rigt--;
+                    Console.WriteLine("Invalid login attempt, please try again.");
+
+                    if(rigt == 0)
+                    {
+                        Console.WriteLine("Your account has been blocked, please contact the bank.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Attempts left: " + rigt);
+                    }
+
+                    Console.WriteLine("==================");
+
+                }
+
+            }
+
+
+
+
+
+
+            #endregion
 
 
 
