@@ -27,6 +27,8 @@ namespace CS_Practices
             #endregion
 
 
+
+
             #region Taksimetre hesaplama
             double StartPrice = 25;
             double PerKmPrice = 15.20;
@@ -47,6 +49,8 @@ namespace CS_Practices
             #endregion
 
 
+
+
             #region Ucak bilet fiyatı
 
 
@@ -61,7 +65,7 @@ namespace CS_Practices
 
 
 
-            if (Mil <= 0 || Age <= 0 || (TravelType != 1 && TravelType!= 2))
+            if (Mil <= 0 || Age <= 0 || (TravelType != 1 && TravelType != 2))
             {
                 Console.WriteLine("hatalı giriş Yaptınız");
             }
@@ -71,11 +75,11 @@ namespace CS_Practices
                 double Price1 = Mil * 0.10;
                 double AgeDisCountRate = 0;
 
-                if ( Age < 12)
+                if (Age < 12)
                 {
                     AgeDisCountRate = 0.50;
                 }
-                else if( Age >= 12 && Age <= 24)
+                else if (Age >= 12 && Age <= 24)
                 {
                     AgeDisCountRate = 0.10;
                 }
@@ -84,19 +88,66 @@ namespace CS_Practices
                     AgeDisCountRate = 0.30;
                 }
 
-                Price -=  (Price * AgeDisCountRate);
+                Price -= (Price * AgeDisCountRate);
 
-                if ( TravelType == 2 )
+                if (TravelType == 2)
                 {
                     Price1 -= (Price1 * 0.20);
                     Price1 *= 2;
 
                 }
 
-                Console.WriteLine("Bilet tutarı: " + Price1 );
+                Console.WriteLine("Bilet tutarı: " + Price1);
             }
 
             #endregion
+
+
+
+
+
+            #region Hava sıcaklıgı
+
+
+            Console.Write("Enter the temperature: ");
+            int temperature = Convert.ToInt32(Console.ReadLine());
+
+            string events = "";
+
+            if (temperature <5)
+            {
+                events = "Skiing";
+            }
+            else if ( temperature >=5  && temperature  <15)
+            {
+                events = "Cinema";
+            }
+            else if(temperature >=15 && temperature <25)
+            {
+                events = "Picnic";
+            }
+            else  
+            {
+                events = "Swimming";
+            }
+
+            Console.WriteLine("Suggested activity: " +events );
+
+
+            #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
